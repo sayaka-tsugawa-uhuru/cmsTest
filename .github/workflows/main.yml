@@ -27,5 +27,5 @@ jobs:
           author_name: Scheduled PR action
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SLACK_WEBHOOK_URL: ${{ secrets.https://hooks.slack.com/services/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 }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         if: always()
