@@ -2,7 +2,7 @@ name: scheduled_create_pr
 
 on:
   schedule:
-    - cron: 40 19 29 1 *
+    - cron: 42 19 29 1 *
 
 jobs:
   create_pr:
