@@ -2,7 +2,7 @@ name: scheduled_create_pr
 
 on:
   schedule:
-    - cron: 10 13 30 1 *
+    - cron: 18 13 30 1 *
 
 jobs:
   create_pr:
@@ -17,7 +17,7 @@ jobs:
     - name: create PR
       env:
         GITHUB_USER: ${{ secrets.GITHUB_USER_TETETE }}
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN_TETETE }}
       run: |
         hub pull-request -b master -m "[Scheduled]develop to master"
     - uses: 8398a7/action-slack@v2
@@ -26,6 +26,6 @@ jobs:
         only_mention_fail: 'here'
         author_name: Scheduled PR action
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN_TETETE }}
         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
       if: always()
